@@ -1,7 +1,8 @@
 export type MenuItem = {
+  id: string;
   name: string;
-  price: string;
-  description: string;
+  price: number;
+  description?: string; // Opcional, porque las bebidas a veces no tienen descripción
 };
 
 export type MenuCategory = {
@@ -16,31 +17,23 @@ export const menu: MenuCategory[] = [
     title: 'Entradas',
     items: [
       {
-        name: 'Patacones Crocantes x5',
-        price: '$00.000',
-        description: 'Servido con hogao de la casa y guacamole fresco.',
-      },
-      {
+        id: 'ent-empanadas',
         name: 'Empanadas Artesanales x5',
-        price: '$00.000',
+        price: 15000,
         description: 'Acompañadas de ají de la casa.',
       },
       {
+        id: 'ent-nachos',
         name: 'Nachos de Arepa con Carne',
-        price: '$00.000',
+        price: 25000,
         description:
           'Crujientes nachos de arepa, carne desmechada, queso fundido, pico de gallo, guacamole y crema agria.',
       },
       {
-        name: 'Ceviche de Chicharrón',
-        price: '$00.000',
-        description:
-          'Crujiente chicharrón de cerdo marinado en limón, cebolla morada, pimentón, mango verde, cilantro y chips de plátano.',
-      },
-      {
-        name: 'Morcilla Artesanal',
-        price: '$00.000',
-        description: 'Servida con arepa artesanal, papa criolla y limón.',
+        id: 'ent-alitas',
+        name: 'Alitas BBQ x8',
+        price: 20000,
+        description: 'Acompañadas de papas y miel mostaza.',
       },
     ],
   },
@@ -49,76 +42,53 @@ export const menu: MenuCategory[] = [
     title: 'Parrilla',
     items: [
       {
-        name: 'Churrasco 320gr',
-        price: '$00.000',
-        description:
-          'Jugoso corte de res a la parrilla, con papa a la francesa, ensalada fresca y chimichurri de la casa.',
-      },
-      {
+        id: 'par-punta',
         name: 'Punta de Anca 320gr',
-        price: '$00.000',
+        price: 40000,
         description:
-          'Selecto corte de res a la parrilla, con papa a la francesa, ensalada fresca y chimichurri de la casa.',
+          'Selecto corte de res a la parrilla, acompañado de papa a la francesa, ensalada fresca y chimichurri de la casa.',
       },
       {
+        id: 'par-lomo-res',
         name: 'Lomo de Res 320gr',
-        price: '$00.000',
+        price: 40000,
         description:
-          'Tierno lomo de res a la parrilla, con papa a la francesa, ensalada fresca y chimichurri de la casa.',
+          'Tierno lomo de res a la parrilla, acompañado de papa a la francesa, ensalada fresca y chimichurri de la casa.',
       },
       {
-        name: 'Cordón de Cerdo 320gr',
-        price: '$00.000',
+        id: 'par-lomo-cerdo',
+        name: 'Lomo de Cerdo 320gr',
+        price: 35000,
         description:
-          'Jugoso lomo de cerdo a la parrilla, con papa a la francesa, ensalada fresca y chimichurri de la casa.',
+          'Jugoso lomo de cerdo a la parrilla, acompañado de papa a la francesa, ensalada fresca y chimichurri de la casa.',
       },
       {
+        id: 'par-pechuga',
         name: 'Pechuga 320gr',
-        price: '$00.000',
+        price: 28000,
         description:
-          'Jugosa pechuga de pollo a la plancha, con papa a la francesa, ensalada fresca y chimichurri de la casa.',
+          'Jugosa pechuga de pollo a la plancha, acompañada de papa a la francesa, ensalada fresca y chimichurri de la casa.',
       },
       {
+        id: 'par-chorizo',
         name: 'Chorizo Artesanal x2',
-        price: '$00.000',
+        price: 20000,
         description:
-          'Dos chorizos artesanales a la parrilla, con papa a la francesa, ensalada fresca y chimichurri de la casa.',
+          'Dos chorizos artesanales a la parrilla, acompañados de papa a la francesa, arepa y chimichurri de la casa.',
       },
       {
-        name: 'Ojo de Bife 320gr',
-        price: '$00.000',
+        id: 'par-picada-2',
+        name: 'Picada Para 2',
+        price: 65000,
         description:
-          'Selecto corte de res con excelente marmoleo, con papa a la francesa, ensalada fresca y chimichurri.',
+          'Punta de anca, lomo de res, lomo de cerdo, chicharrón, limón, chimichurri, papas a la francesa y arepa.',
       },
       {
-        name: 'Bife Chorizo 320gr',
-        price: '$00.000',
-        description:
-          'Selecto corte de res con excelente marmoleo, con papa a la francesa, ensalada fresca y chimichurri.',
-      },
-      {
-        name: 'Chicharrón al Barril 320gr',
-        price: '$00.000',
-        description:
-          'Chicharrón de cerdo con piel crocante y carne jugosa, servido con papa francesa, arepa, limón, ensalada y chimichurri.',
-      },
-      {
-        name: 'Chatarraso',
-        price: '$00.000',
-        description:
-          'Jugoso lomo de cerdo a la parrilla, con papa a la francesa, ensalada fresca y chimichurri de la casa.',
-      },
-      {
-        name: 'Picada para 2',
-        price: '$00.000',
-        description:
-          'Selección de la parrilla para compartir, con papa a la francesa, ensalada fresca y chimichurri.',
-      },
-      {
+        id: 'par-picada-fam',
         name: 'Picada Familiar',
-        price: '$00.000',
+        price: 140000,
         description:
-          'Selección de la parrilla para compartir en familia, con papa a la francesa, ensalada fresca y chimichurri.',
+          'Punta de anca, lomo de res, lomo de cerdo, chicharrón, limón, ensalada, chimichurri, papas a la francesa y arepa.',
       },
     ],
   },
@@ -127,65 +97,83 @@ export const menu: MenuCategory[] = [
     title: 'Burger',
     items: [
       {
+        id: 'brg-insignia',
         name: 'La Insignia',
-        price: '$00.000',
+        price: 26000,
         description:
-          'Pan artesanal, carne de res 180g, queso cheddar, queso mozzarella, tocineta crujiente, cebolla caramelizada, lechuga cogollo y salsa BBQ.',
-      },
-      {
-        name: 'Emperadora',
-        price: '$00.000',
-        description:
-          'Pan artesanal, salsa de ajo de la casa, carne de res 180g, doble queso cheddar, tocineta crujiente, cebolla crispy y salsa de maracuyá.',
-      },
-      {
-        name: 'La Patrona',
-        price: '$00.000',
-        description:
-          'Pan artesanal, carne de res 180g, doble queso mozzarella, chorizo parrillero, tomate, pepinillos y chimichurri.',
-      },
-      {
-        name: 'Volcán',
-        price: '$00.000',
-        description:
-          'Pan artesanal, carne de res 180g, doble queso cheddar fundido, tocineta crujiente, cebolla crispy, jalapeños y salsa chipotle.',
-      },
-      {
-        name: 'Vaquera',
-        price: '$00.000',
-        description:
-          'Pan artesanal, carne de res 180g, queso cheddar fundido, tocineta crujiente, tomate, cebolla, pepinillos y salsa chipotle.',
-      },
-      {
-        name: 'La Imperial',
-        price: '$00.000',
-        description:
-          'Pan artesanal, carne de res 180g, queso mozzarella, tocineta crujiente, pera caramelizada y salsa de queso azul.',
-      },
-      {
-        name: 'La Reina Crispy',
-        price: '$00.000',
-        description:
-          'Pan artesanal, pechuga de pollo apanada, doble queso mozzarella, tocineta crujiente, mermelada de pimentón y salsa BBQ.',
+          'La Burger que representa nuestra casa. Pan artesanal, jugosa carne de res de 180 g, queso cheddar, queso mozzarella, tocineta crujiente, cebolla caramelizada, lechuga cogollo y salsa BBQ. Acompañada de papas a la francesa.',
       },
     ],
   },
   {
-    id: 'sandwich',
-    title: 'Sandwich',
+    id: 'bebidas',
+    title: 'Gaseosas y Bebidas',
     items: [
+      { id: 'beb-coca', name: 'Coca Cola', price: 6000 },
+      { id: 'beb-postobon', name: 'Postobon', price: 6000 },
+      { id: 'beb-bretana', name: 'Bretaña', price: 6000 },
+      { id: 'beb-gatorade', name: 'Gatorade', price: 7000 },
+      { id: 'beb-jugo', name: 'Jugo Hit', price: 7000 },
+      { id: 'beb-agua', name: 'Agua', price: 3000 },
+    ],
+  },
+  {
+    id: 'cervezas',
+    title: 'Cervezas',
+    items: [
+      { id: 'cer-corona', name: 'Cerveza Corona', price: 9000 },
+      { id: 'cer-sol', name: 'Cerveza Sol', price: 9000 },
+      { id: 'cer-heineken', name: 'Cerveza Heineken', price: 9000 },
+      { id: 'cer-club', name: 'Club Colombia Dorada', price: 8000 },
+      { id: 'cer-poker', name: 'Cerveza Poker Latón', price: 7000 },
+      { id: 'cer-andina', name: 'Cerveza Andina Latón', price: 7000 },
+    ],
+  },
+  {
+    id: 'sodas',
+    title: 'Sodas',
+    items: [
+      { id: 'sod-manzana', name: 'Soda de Manzana y Kiwi', price: 16000 },
+      { id: 'sod-frutos', name: 'Soda de Frutos Rojos', price: 16000 },
+      { id: 'sod-maracuya', name: 'Soda de Maracuyá', price: 16000 },
+      { id: 'sod-cereza', name: 'Soda de Cereza', price: 16000 },
       {
-        name: 'Sandwich de Res',
-        price: '$00.000',
-        description:
-          'Pan artesanal, carne de res 180g, queso cheddar fundido, tocineta crujiente, tomate, cebolla, pepinillos y salsa chipotle.',
+        id: 'sod-env-manzana',
+        name: 'Soda Envenenada - Manzana y Kiwi',
+        price: 18000,
       },
       {
-        name: 'Sandwich Gourmet',
-        price: '$00.000',
-        description:
-          'Pan artesanal, carne de res 180g, queso mozzarella, tocineta crujiente, pera caramelizada y salsa de queso azul.',
+        id: 'sod-env-frutos',
+        name: 'Soda Envenenada - Frutos Rojos',
+        price: 18000,
       },
+      {
+        id: 'sod-env-maracuya',
+        name: 'Soda Envenenada - Maracuyá',
+        price: 18000,
+      },
+      { id: 'sod-env-cereza', name: 'Soda Envenenada - Cereza', price: 18000 },
+    ],
+  },
+  {
+    id: 'licores',
+    title: 'Licores',
+    items: [
+      { id: 'lic-amarillo-bot', name: 'Amarillo Botella', price: 70000 },
+      { id: 'lic-amarillo-med', name: 'Amarillo Media', price: 40000 },
+      {
+        id: 'lic-agua-bot',
+        name: 'Aguardiente Tradicional Botella',
+        price: 60000,
+      },
+      {
+        id: 'lic-agua-med',
+        name: 'Aguardiente Tradicional Media',
+        price: 40000,
+      },
+      { id: 'lic-ron5-bot', name: 'Ron 5 Años Botella', price: 80000 },
+      { id: 'lic-ron5-med', name: 'Ron 5 Años Media', price: 50000 },
+      { id: 'lic-ron8-bot', name: 'Ron 8 Años Botella', price: 130000 },
     ],
   },
 ];
