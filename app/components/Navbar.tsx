@@ -1,45 +1,39 @@
-'use client';
+import Link from 'next/link';
+import MobileMenu from './MobileMenu';
 
-import { useEffect, useState } from 'react';
-import { MenuCategory } from '@/app/data/menu';
+interface NavbarProps {
+  categories: { id: string; title: string }[];
+}
 
-export default function Navbar({ categories }: { categories: MenuCategory[] }) {
-  const [active, setActive] = useState(categories[0]?.id);
-
-  useEffect(() => {
-    const sections = categories
-      .map((c) => document.getElementById(c.id))
-      .filter(Boolean) as HTMLElement[];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: '-45% 0px -50% 0px' },
-    );
-
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, [categories]);
-
+export default function Navbar({ categories }: NavbarProps) {
   return (
-    <nav className='sticky top-0 z-20 bg-bg/95 backdrop-blur border-b border-gold/20'>
-      <ul className='flex gap-6 overflow-x-auto px-6 py-3 sm:justify-center sm:overflow-visible scrollbar-hide'>
-        {categories.map((c) => (
-          <li key={c.id} className='shrink-0'>
-            <a
-              href={`#${c.id}`}
-              className={`text-xs sm:text-sm tracking-widest uppercase transition-colors ${
-                active === c.id ? 'text-gold' : 'text-muted hover:text-ivory'
-              }`}
+    <nav className='fixed top-0 w-full z-40 bg-[var(--color-bg)]/90 backdrop-blur-md border-b border-[var(--color-gold)]/15'>
+      <div className='max-w-3xl mx-auto px-6 h-16 flex items-center justify-between'>
+        <Link
+          href='/'
+          className='font-display text-xl text-[var(--color-gold)] tracking-widest'
+        >
+          ALTA MESA
+        </Link>
+
+        {/* Menú Escritorio */}
+        <div className='hidden md:flex gap-6'>
+          {categories.map((cat) => (
+            <Link
+              key={cat.id}
+              href={`#${cat.id}`}
+              className='text-xs uppercase tracking-widest text-[var(--color-ivory)] hover:text-[var(--color-gold)]'
             >
-              {c.title}
-            </a>
-          </li>
-        ))}
-      </ul>
+              {cat.title}
+            </Link>
+          ))}
+        </div>
+
+        {/* El menú móvil se renderiza solo cuando sea necesario */}
+        <div className='md:hidden'>
+          <MobileMenu categories={categories} />
+        </div>
+      </div>
     </nav>
   );
 }
