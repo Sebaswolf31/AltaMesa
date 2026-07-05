@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import './globals.css';
+import Preloader from './components/Preloader';
 
 const display = Cormorant_Garamond({
   subsets: ['latin'],
@@ -31,7 +32,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='es' className={`${display.variable} ${sans.variable}`}>
-      <body className='antialiased'>{children}</body>
+      <body className='antialiased'>
+        <Preloader />
+        {children}
+      </body>
     </html>
   );
 }

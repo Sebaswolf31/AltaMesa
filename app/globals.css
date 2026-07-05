@@ -17,3 +17,174 @@ body {
   color: var(--color-ivory);
   font-family: var(--font-sans);
 }
+
+
+/* ===========================
+   PRELOADER
+=========================== */
+
+.preloader-monogram{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp .8s ease forwards;
+}
+
+.preloader-alta{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp .8s ease .6s forwards;
+}
+
+.preloader-mesa{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp .8s ease 1s forwards;
+}
+
+.preloader-line{
+
+    position:relative;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--color-gold);
+
+    overflow:hidden;
+
+    animation:lineGrow .8s ease 1.5s forwards;
+
+}
+
+
+
+.preloader-line::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-2px;
+
+    left:-30px;
+
+    width:30px;
+
+    height:5px;
+
+    background:white;
+
+    filter:blur(3px);
+
+    opacity:.8;
+
+    animation:shine 2s ease 2.2s infinite;
+
+}
+
+.preloader-tagline{
+    opacity:0;
+    transform:translateY(15px);
+
+    animation:fadeUp .8s ease 2s forwards;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes lineGrow{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:220px;
+    }
+
+}
+
+
+.preloader-star{
+    color:var(--color-gold);
+
+    font-size:14px;
+
+    margin:8px 0;
+
+    opacity:0;
+
+    animation:
+        fadeUp .6s ease .35s forwards,
+        starGlow 2s ease-in-out 1.3s infinite;
+}
+
+
+
+.preloader-content{
+
+    animation:
+        zoomOut .7s ease 2.8s forwards;
+
+}
+
+@keyframes zoomOut{
+
+    to{
+
+        transform:scale(1.05);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes starGlow{
+
+    0%{
+        transform:scale(1);
+        text-shadow:0 0 0px var(--color-gold);
+    }
+
+    50%{
+        transform:scale(1.25);
+        text-shadow:
+            0 0 8px var(--color-gold),
+            0 0 20px var(--color-gold);
+    }
+
+    100%{
+        transform:scale(1);
+        text-shadow:0 0 0px var(--color-gold);
+    }
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-30px;
+
+    }
+
+    to{
+
+        left:220px;
+
+    }
+
+}
