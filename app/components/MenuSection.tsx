@@ -1,5 +1,6 @@
 import { MenuCategory } from '@/app/data/menu';
 import MenuItem from './MenuItem';
+import MeatGuideModal from './MeatGuideModal'; // Importa el componente
 
 export default function MenuSection({ category }: { category: MenuCategory }) {
   return (
@@ -13,11 +14,19 @@ export default function MenuSection({ category }: { category: MenuCategory }) {
         </h2>
         <span className='flex-1 h-px bg-gradient-to-r from-gold/50 to-transparent' />
       </div>
+
       <div className='divide-y divide-gold/10'>
         {category.items.map((item) => (
-          <MenuItem key={item.name} item={item} />
+          <MenuItem key={item.id} item={item} />
         ))}
       </div>
+
+      {/* AQUÍ ESTÁ LA LÓGICA: Solo aparece en la sección de parrilla */}
+      {category.id === 'parrilla' && (
+        <div className='mt-8 flex justify-center'>
+          <MeatGuideModal />
+        </div>
+      )}
     </section>
   );
 }

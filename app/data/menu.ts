@@ -94,7 +94,7 @@ export const menu: MenuCategory[] = [
   },
   {
     id: 'burger',
-    title: 'Burger',
+    title: 'Burgers Y Sandwinch',
     items: [
       {
         id: 'brg-insignia',
@@ -103,18 +103,93 @@ export const menu: MenuCategory[] = [
         description:
           'La Burger que representa nuestra casa. Pan artesanal, jugosa carne de res de 180 g, queso cheddar, queso mozzarella, tocineta crujiente, cebolla caramelizada, lechuga cogollo y salsa BBQ. Acompañada de papas a la francesa.',
       },
+      {
+        id: 'brg-emperadora',
+        name: 'Emperadora',
+        price: 28000,
+        description:
+          'Pan artesanal, salsa de ajo de la casa, lechuga mézclum, jugosa carne de res de 180g, doble queso cheddar, tocineta crujiente, cebolla crispy y una exclusiva salsa de maracuyá. Acompañada de papas a la francesa.',
+      },
+      {
+        id: 'brg-patrona',
+        name: 'La Patrona o Parrillera',
+        price: 35000,
+        description:
+          'Pan artesanal, salsa de la casa, lechuga cogollo, tomate, pepinillos, jugosa carne de res de 180g, doble queso mozzarella, chorizo parrillero y un toque de chimichurri. Acompañada de papas a la francesa.',
+      },
+      {
+        id: 'brg-volcan',
+        name: 'Volcán',
+        price: 35000,
+        description:
+          'Pan artesanal, salsa de la casa, lechuga cogollo, jugosa carne de res de 180g, doble queso cheddar fundido, tocineta crujiente, jalapeños, cebolla crispy y un toque de salsa chipotle. Acompañada de papas a la francesa.',
+      },
+      {
+        id: 'brg-imperial',
+        name: 'La Imperial',
+        price: 35000,
+        description:
+          'Pan artesanal, salsa de la casa, lechuga mézclum, jugosa carne de res de 180g, queso mozzarella, tocineta crujiente, pera caramelizada y una delicada salsa de queso azul. Acompañada de papas a la francesa.',
+      },
+      {
+        id: 'brg-reina-crispy',
+        name: 'La Reina Crispy',
+        price: 30000,
+        description:
+          'Pan artesanal, salsa de la casa, lechugas mézclum, pechuga de pollo apanada, doble queso mozzarella fundido, tocineta crujiente, mermelada de pimentón y un toque de salsa BBQ. Acompañada de papas a la francesa.',
+      },
+      {
+        id: 'brg-vaquera',
+        name: 'Vaquera',
+        price: 35000,
+        description:
+          'Pan artesanal, salsa de la casa, lechuga cogollo, tomate, cebolla, carne de res de 180g, queso cheddar fundido, tocineta crujiente, pepinillos y un toque de salsa chipotle. Acompañada de papas a la francesa.',
+      },
+      {
+        id: 'brg-sandwich',
+        name: 'Sandwich',
+        price: 29000,
+        description:
+          'Combo de sandwich tipo cubano, con papas a la francesa y cocacola',
+      },
     ],
   },
+
   {
     id: 'bebidas',
     title: 'Gaseosas y Bebidas',
     items: [
-      { id: 'beb-coca', name: 'Coca Cola', price: 6000 },
-      { id: 'beb-postobon', name: 'Postobon', price: 6000 },
-      { id: 'beb-bretana', name: 'Bretaña', price: 6000 },
-      { id: 'beb-gatorade', name: 'Gatorade', price: 7000 },
-      { id: 'beb-jugo', name: 'Jugo Hit', price: 7000 },
-      { id: 'beb-agua', name: 'Agua', price: 3000 },
+      {
+        id: 'beb-coca',
+        name: 'Coca Cola, sprite, quatro, kola roman x400ml',
+        price: 6000,
+      },
+      {
+        id: 'beb-postobon',
+        name: 'Postobon',
+        description: 'Colombiana, pepsi, uva, manzana, naranja x400ml',
+        price: 6000,
+      },
+      {
+        id: 'beb-bretana',
+        name: 'Bretaña',
+        description: 'x300ml',
+        price: 6000,
+      },
+      {
+        id: 'beb-gatorade',
+        name: 'Gatorade',
+        description: 'Mora azul, naranja, frutos rojos x500ml',
+        price: 7000,
+      },
+      {
+        id: 'beb-jugo',
+        name: 'Jugo Hit',
+        description:
+          'Lulo, Naranja piña, mango, mora, frutos tropiclaes x500ml',
+        price: 7000,
+      },
+      { id: 'beb-agua', name: 'Agua', description: 'x500ml', price: 3000 },
     ],
   },
   {
