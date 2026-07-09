@@ -161,7 +161,8 @@ export const menu: MenuCategory[] = [
     items: [
       {
         id: 'beb-coca',
-        name: 'Coca Cola, sprite, quatro, kola roman x400ml',
+        name: 'Productos CocaCola',
+        description: 'Coca Cola, sprite, quatro, kola roman x400ml',
         price: 6000,
       },
       {
