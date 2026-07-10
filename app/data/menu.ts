@@ -23,6 +23,25 @@ export const menu: MenuCategory[] = [
         description: 'Acompañadas de ají de la casa.',
       },
       {
+        id: 'ent-patacones',
+        name: 'Patacones con hogao x5',
+        price: 12000,
+        description: 'Acompañados de hogao y guacamole.',
+      },
+      {
+        id: 'ent-ceviche',
+        name: 'Ceviche de chicharrón x400gr',
+        price: 25000,
+        description: 'Un patacon grande con, cebolla, mango, pimiento, cilantro, limon y sal.',
+      },
+      {
+        id: 'ent-longaniza',
+        name: 'Longaniza x250gr',
+        price: 18000,
+        description: 'Acompñada de papa, salsa de la casa o chimichurri.',
+      },
+      
+      {
         id: 'ent-nachos',
         name: 'Nachos de Arepa con Carne',
         price: 25000,
@@ -89,6 +108,27 @@ export const menu: MenuCategory[] = [
         price: 140000,
         description:
           'Punta de anca, lomo de res, lomo de cerdo, chicharrón, limón, ensalada, chimichurri, papas a la francesa y arepa.',
+      },
+      {
+        id: 'par-churrasco',
+        name: 'Churrasco Premium x350gr',
+        price: 38000,
+        description:
+          'Un jugoso corte de res a la parrilla, preparado al punto de cocción de tu preferencia para resaltar todo su sabor y terneza. Acompañado de papas a la francesa crujientes, ensalada fresca de la casa y chimichurri artesanal.',
+      },
+      {
+        id: 'par-chatarroso1',
+        name: 'Chatarraso x400gr',
+        price: 60000,
+        description:
+          ' Elige tu corte favorito: punta de anca o lomo de res, acompañado de papas criollas doradas y tomates gratinados con queso.',
+      },
+      {
+        id: 'par-chatarroso2',
+        name: 'Chatarraso x600gr',
+        price: 85000,
+        description:
+          ' Elige tu corte favorito: punta de anca o lomo de res, acompañado de papas criollas doradas y tomates gratinados con queso.',
       },
     ],
   },
@@ -209,10 +249,18 @@ export const menu: MenuCategory[] = [
     id: 'sodas',
     title: 'Sodas',
     items: [
+      { id: 'sod-natural', name: 'Soda Natural', price: 10000 },
       { id: 'sod-manzana', name: 'Soda de Manzana y Kiwi', price: 16000 },
       { id: 'sod-frutos', name: 'Soda de Frutos Rojos', price: 16000 },
       { id: 'sod-maracuya', name: 'Soda de Maracuyá', price: 16000 },
       { id: 'sod-cereza', name: 'Soda de Cereza', price: 16000 },
+      { id: 'sod-mago', name: 'Soda de Mango Biche', price: 16000 },
+      { id: 'sod-tamarindo', name: 'Soda de Tamarindo', price: 16000 },
+      {
+        id: 'sod-env-natural',
+        name: 'Soda Envenenada - Natural',
+        price: 13000,
+      },
       {
         id: 'sod-env-manzana',
         name: 'Soda Envenenada - Manzana y Kiwi',
@@ -229,6 +277,16 @@ export const menu: MenuCategory[] = [
         price: 18000,
       },
       { id: 'sod-env-cereza', name: 'Soda Envenenada - Cereza', price: 18000 },
+      {
+        id: 'sod-env-mango',
+        name: 'Soda Envenenada - Mango Biche',
+        price: 18000,
+      },
+      {
+        id: 'sod-env-tamarindo',
+        name: 'Soda Envenenada - Tamarindo',
+        price: 18000,
+      },
     ],
   },
   {
