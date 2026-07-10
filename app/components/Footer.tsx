@@ -63,20 +63,20 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
+         
           {/* Imagen del mapa */}
           <div className="overflow-hidden rounded-lg border border-gold/10 shadow-lg opacity-80 transition-opacity duration-300 hover:opacity-100">
             <a
               href="https://maps.app.goo.gl/dSLDQihwn595q6gn8"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block h-32 w-full grayscale contrast-125 transition-all duration-500 hover:grayscale-0"
+              className="relative block h-32 w-full transition-all duration-500 md:grayscale md:contrast-125 md:hover:grayscale-0"
             >
               <Image
                 src="/mapa-ubicacion.jpeg"
                 alt="Ubicación Alta Mesa Gastro Bar"
                 fill
-                className="object-contain"
+                className="h-auto w-full rounded-lg"
               />
             </a>
           </div>
